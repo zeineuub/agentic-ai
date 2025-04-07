@@ -1,27 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import "./Prompt.css";
+
 const Prompt = ({ onSend }) => {
   const [message, setMessage] = useState("");
+  const inputRef = useRef(null);
 
   const handleSend = () => {
     if (message.trim()) {
-      onSend(message); // Envoie le message au parent
-      setMessage(""); // Réinitialise l'input
+      onSend(message);
+      setMessage(""); // Réinitialiser le message
+      if (inputRef.current) {
+        inputRef.current.style.height = "45px"; // Réinitialise la hauteur
+      }
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setMessage(e.target.value);
+    if (inputRef.current) {
+      inputRef.current.style.height = "45px"; 
+      inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 150)}px`; 
     }
   };
 
   return (
     <div className="prompt-container">
       <textarea
-        rows="1"
-        cols="50"
-        type="text"
-        placeholder="Type your message..."
+        ref={inputRef}
         className="prompt-input"
+        placeholder="Type your message..."
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && handleSend()} // Envoi avec "Entrée"
+        onChange={handleInputChange}
+        onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()} 
       />
       <button className="send-btn" onClick={handleSend}>
         <SendIcon />
