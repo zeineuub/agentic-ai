@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import "./Prompt.css";
 
-const Prompt = ({ onSend }) => {
+const Prompt = ({ onSend, onInputFocus  }) => {
   const [message, setMessage] = useState("");
   const inputRef = useRef(null);
 
@@ -23,7 +23,11 @@ const Prompt = ({ onSend }) => {
       inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 150)}px`; 
     }
   };
-
+  const handleKeyDown = (e) => {
+    if(e.target.nodeName.toLowerCase() === 'input'){
+      onClick(true);
+    }
+  }
   return (
     <div className="prompt-container">
       <textarea
@@ -32,6 +36,7 @@ const Prompt = ({ onSend }) => {
         placeholder="Type your message..."
         value={message}
         onChange={handleInputChange}
+        onFocus={onInputFocus}
         onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()} 
       />
       <button className="send-btn" onClick={handleSend}>

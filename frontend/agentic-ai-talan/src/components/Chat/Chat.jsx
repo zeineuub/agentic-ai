@@ -1,17 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Prompt from "../Prompt/Prompt";
 import "./Chat.css";
+import LandingPage from "../../pages/Landing/LandingPage";
 
 const Chat = ({isSidebarOpen}) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
-  
+    const [showLanding, setShowLanding] = useState(true); // État géré ici
     const handleSendMessage = async () => {
       setMessages([...messages, { text: input, user: 'user' }]);
       const response = await fetchMessage(input);
       setMessages([...messages, { text: response, user: 'bot' }]);
       setInput('');
     };
+    useEffect(() => {
+        if (messages.length === 0) {
+          setShowLanding(true);
+        }
+      }, [messages]);
+    const handleInputFocus = () => {
+        setShowLanding(false); // Masquer le LandingPage au focus
+      };
     const fetchMessage = async (input) => {
         const response = await fetch('http://localhost:3000/chat', {
           method: 'POST',
@@ -30,6 +39,7 @@ const Chat = ({isSidebarOpen}) => {
 
   return (
     <div className="chat">
+      {showLanding  ?  <LandingPage/>:
       <div className="chat-messages">
         {messages.map((msg, index) => (
           <div key={index} className={`chat-bubble ${msg.sender}`}>
@@ -37,7 +47,8 @@ const Chat = ({isSidebarOpen}) => {
           </div>
         ))}
       </div>
-      <Prompt onSend={handleSendMessage} />
+      }
+      <Prompt onSend={handleSendMessage} onInputFocus={handleInputFocus} />
     </div>
   );
 };

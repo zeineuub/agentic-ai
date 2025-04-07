@@ -14,3 +14,17 @@
     overflow-y: auto;
     padding-bottom: 80px; /* Laisse de l'espace pour l'input */
   }
+/* Dans Chat.css */
+.landing-page {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.landing-page.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-messages {
+  transition: margin-top 0.3s ease-in-out;
+}

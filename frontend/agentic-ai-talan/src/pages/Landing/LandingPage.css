@@ -1,0 +1,29 @@
+/* Adaptations responsive */
+@media (max-width: 768px) {
+    .example-item, .capability-item, .limitation-item {
+        font-size: 0.85rem;
+    }
+    h2 {
+        font-size: 1.25rem !important;
+    }
+}
+
+.icon {
+    max-width: 60px !important; /* Taille réduite sur mobile */
+}
+
+@media (min-width: 992px) {
+    .icon {
+        max-width: 80px !important;
+    }
+}
+
+.example-item, .capability-item, .limitation-item {
+    background-color: #ebedf5;
+    transition: all 0.3s ease;
+    border-radius: 10%;
+    word-break: break-word; /* Gestion des longs textes */
+    font-size: 11px;
+}
+
+/* Conserver les autres styles existants */

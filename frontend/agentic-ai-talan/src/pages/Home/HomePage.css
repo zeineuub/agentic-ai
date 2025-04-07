@@ -27,3 +27,8 @@
     background-color: var(--bg-color); /* Exemple */
 }
 
+.chat {
+    flex-grow: 1;
+    background-color:  var(--bg-color); /* Exemple */
+    overflow-y: auto; /* Pour le scroll */
+}
