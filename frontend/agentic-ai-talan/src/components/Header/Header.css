@@ -1,0 +1,35 @@
+/* src/components/Header/Header.css */
+.header {
+    display: flex;
+    align-items:flex-start;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 10vh;
+    width: 100%;
+    z-index: 900;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre élégante */
+
+  }
+  
+  .new-chat-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  
+  .sidebar-toggle {
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #000;
+  }
+  .sidebar-toggle.open {
+    margin-left: 10px;
+  }

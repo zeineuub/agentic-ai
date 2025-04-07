@@ -1,0 +1,73 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  --font-inter: 'Inter', sans-serif;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --sidebar-bg: #f7f7f7;
+  --header-bg: #ffffff;
+  --border-color: #e5e5e5;
+  --chat-bg: #f5f5f5;
+  --user-message-bg: #5580B9;
+  --bot-message-bg: #e9ecef;
+  --btn-send:#333333;
+  --chat-bg:#ffffff;
+  --hover-color: #E8E8E9;
+  --btn-gradient-start: #FF6B6B;
+  --btn-gradient-end: #4ECDC4;
+  /* Couleurs de fond, de texte, etc. */
+  --color-bg: #ffffff;
+  --color-text: #333;
+}
+* {
+  font-family: var(--font-inter);
+}
+button, input, textarea, select {
+  font-family: inherit !important;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+

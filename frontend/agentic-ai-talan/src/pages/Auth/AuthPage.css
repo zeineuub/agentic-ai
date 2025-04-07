@@ -1,0 +1,68 @@
+
+@media (max-width: 767px) {
+    .auth-page form {
+      margin-top: 20px;
+    }
+}
+.auth-page {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+.form-container {
+    width: 100%;
+    max-width: 400px;
+}
+.btn-submit {
+    background: linear-gradient(
+        45deg,
+        #D54FAF 0%,
+        #BC66BE 43%,
+        #7494E0 100%
+      );
+    border: none !important;
+    color: #fff !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    margin-top: 5%;
+}
+/* Désactive le style d'autocomplétion */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover, 
+.form-control:-webkit-autofill:focus, 
+.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+/* Garantit le fond blanc en permanence */
+.form-control {
+    background-color: white !important;
+}
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Effets au focus */
+.form-control:focus {
+    border-color: #BC66BE  !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25) !important;
+}
+
+/* Animation des champs */
+.form-control {
+    transition: all 0.3s ease !important;
+}
+
+.form-control:hover {
+    border-color: #7494E0  !important;
+}
+.btn-azure:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+
+}
+
+

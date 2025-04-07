@@ -1,0 +1,47 @@
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app.light {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --sidebar-bg: #f7f7f7;
+  --header-bg: #ffffff;
+  --border-color: #e5e5e5;
+  --chat-bg: #f5f5f5;
+  --user-message-bg: #007bff;
+  --bot-message-bg: #e9ecef;
+  --btn-send:#333333;
+  --chat-bg:#ffffff;
+  --hover-color: #E8E8E9;
+  --btn-bg:#5580B9;
+}
+
+.app.dark {
+  --bg-color: #343541;
+  --text-color: #ffffff;
+  --sidebar-bg: #202123;
+  --header-bg: #343541;
+  --border-color: #4d4d4f;
+  --chat-bg: #444654;
+  --user-message-bg: #565869;
+  --bot-message-bg: #343541;
+  --btn-send:#ffffff;
+  --chat-bg:#343541;
+  --hover-color: #E8E8E9;
+  --btn-bg:#E14480;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: var(--text-color);
+}
