@@ -3,6 +3,8 @@ import { Dropdown } from 'react-bootstrap';
 import { useTheme } from '../../utils/Theme';
 import AddIcon from '@mui/icons-material/Add';
 import logo from '../../assets/images/talan-image.png';
+import darklogo from '../../assets/images/talan-image-dark.png';
+
 import './Sidebar.css';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -18,15 +20,15 @@ const Sidebar = ({ isOpen }) => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} bg-body-tertiary`}>
-      <div className="sidebar-header border-bottom p-3">
-        <img src={logo} className="company-logo" alt="Logo" height="40" />
+    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+      <div className="sidebar-header  p-3">
+        <img src={`${theme == "dark" ? darklogo : logo}`} className="company-logo" alt="Logo" height="40" />
         <div onClick={() => console.log("new chat")} className="new-chat-btn">
           <AddIcon />
         </div>
       </div>
 
-      <div className="sidebar-footer border-top p-3">
+      <div className="sidebar-footer p-3">
         <Dropdown show={isDropdownOpen} onToggle={setIsDropdownOpen} align="end">
           <Dropdown.Toggle className="custom-dropdown-toggle" onClick={toggleDropdown}>
             {user.email.split('@')[0]}...

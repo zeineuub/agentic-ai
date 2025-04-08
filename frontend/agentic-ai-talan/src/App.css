@@ -18,10 +18,16 @@
   --chat-bg:#ffffff;
   --hover-color: #E8E8E9;
   --btn-bg:#5580B9;
+  --sidebar-bg:#F3F3F3;
+  --menu-item-bg: rgba(200, 200, 200, 0.3);
+  --icon-color: #333333;
+  --menu-bg:#ffffff;
+  --example-bg:#ebedf5;
+  --prompt-bg:#ffffff;
 }
 
 .app.dark {
-  --bg-color: #343541;
+  --bg-color: #202020;
   --text-color: #ffffff;
   --sidebar-bg: #202123;
   --header-bg: #343541;
@@ -33,6 +39,12 @@
   --chat-bg:#343541;
   --hover-color: #E8E8E9;
   --btn-bg:#E14480;
+  --sidebar-bg:#171717;
+  --menu-item-bg: #353535;
+  --icon-color: #a0a0a0;
+  --menu-bg:#262626;
+  --example-bg:#2a2a2b;
+  --prompt-bg:#2a2a2b;
 }
 
 body {
@@ -42,6 +54,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: var(--bg-color);
   color: var(--text-color);
+  fill: var(--text-color);
 }

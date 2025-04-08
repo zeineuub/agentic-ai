@@ -19,11 +19,13 @@
 }
 
 .example-item, .capability-item, .limitation-item {
-    background-color: #ebedf5;
+    background-color: var(--example-bg);
     transition: all 0.3s ease;
     border-radius: 10%;
     word-break: break-word; /* Gestion des longs textes */
     font-size: 11px;
+    color:var(--text-color) !important;
 }
+
 
 /* Conserver les autres styles existants */

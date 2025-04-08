@@ -44,18 +44,18 @@ const AuthPage = () => {
   };
 
   return (
-    <Container fluid className="auth-page vh-100">
+    <Container fluid className="auth-page h-100">
       <Row className="h-100">
     <Col
       md={6}
       className="d-flex flex-column justify-content-center align-items-center bg-white p-5"
     >
   <div className="w-100" style={{ maxWidth: "90%" }}>
-    <div className="text-center mb-5">
+    <div className="text-center mb-4">
       <img 
         src={TalanLogoDark} 
         alt="Talan Logo" 
-        className="mb-4" 
+        className="mb-2" 
         style={{ width: "12em" }}
       />
       <h2 className="mb-3 fw-bold">Login to your account</h2>
@@ -103,7 +103,7 @@ const AuthPage = () => {
       
       <div className="position-relative text-center mb-4">
         <hr className="text-muted" />
-        <span className="position-absolute bg-white px-3" style={{ 
+        <span className="position-absolute bg-white px-2" style={{ 
           top: '-0.8em', 
           left: '50%', 
           transform: 'translateX(-50%)',
@@ -117,7 +117,7 @@ const AuthPage = () => {
         className="w-100 rounded-pill btn-azure fw-medium d-flex align-items-center justify-content-center shadow-sm mb-3"
         onClick={handleAzureSSO}
         style={{
-          border: '0.2rem solid #e0e0e0',
+          border: '0.2rem solid var(--border-color)',
           transition: 'all 0.3s ease'
         }}
       >

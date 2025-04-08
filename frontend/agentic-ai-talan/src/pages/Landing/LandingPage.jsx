@@ -16,7 +16,7 @@ const LandingPage = () => {
                             className='icon img-fluid mb-3' 
                             style={{ maxWidth: '80px', height: 'auto' }}
                         />
-                        <h2 className="fs-5 fs-md-4 mb-3">Use Cases</h2>
+                        <h2 style={{color:"var(--text-color)"}} className="fs-5 fs-md-4 mb-3">Use Cases</h2>
                         <div className="d-flex flex-column gap-3">
                             <div className="example-item p-2 rounded text-start text-sm-center">
                                 Explain digital transformation to non-technical stakeholders
@@ -39,7 +39,7 @@ const LandingPage = () => {
                             className='icon img-fluid mb-3' 
                             style={{ maxWidth: '80px', height: 'auto' }}
                         />
-                        <h2 className="fs-5 fs-md-4 mb-3">Core Expertise</h2>
+                        <h2 style={{color:"var(--text-color)"}} className="fs-5 fs-md-4 mb-3">Core Expertise</h2>
                         <div className="d-flex flex-column gap-3">
                             <div className="capability-item p-2 rounded">
                                 End-to-end digital transformation consulting
@@ -62,7 +62,7 @@ const LandingPage = () => {
                             className='icon img-fluid mb-3' 
                             style={{ maxWidth: '80px', height: 'auto' }}
                         />
-                        <h2 className="fs-5 fs-md-4 mb-3">Ethical Framework</h2>
+                        <h2 style={{color:"var(--text-color)"}} className="fs-5 fs-md-4 mb-3">Ethical Framework</h2>
                         <div className="d-flex flex-column gap-3">
                             <div className="limitation-item p-2 rounded">
                                 Client data confidentiality guarantee

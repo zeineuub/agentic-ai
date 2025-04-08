@@ -1,7 +1,7 @@
 /* src/components/Sidebar/Sidebar.css */
 .sidebar {
   width: 250px;
-  background-color: #F3F3F3;
+  background-color: var(--sidebar-bg) !important;
   left: 0;
   top: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -23,8 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
+
   height: 60px;
 }
 
@@ -33,18 +32,17 @@
 }
 
 .sidebar-footer {
-  padding: 1rem;
-  border-top: 1px solid #ddd;
   margin-top: auto;
+  border-top: 1px solid var(--border-color);
 }
 /* Style du bouton du Dropdown */
 .custom-dropdown-toggle {
   display: flex;
   align-items: center;
   background: transparent !important;
-  border: none !important;
+  border: none var(--border-color) !important;
   box-shadow: none !important;
-  color: black;
+  color: var(--text-color) !important;
   font-size: 16px;
   font-weight: 500;
   padding: 10px 15px;
@@ -59,21 +57,22 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   padding: 5px 0;
   min-width: 180px;
-  color: #222 !important;
+  color: var(--text-color)  !important;
+  background-color: var(--menu-bg)!important;
 }
 
 /* Style des éléments du menu */
 .custom-dropdown-menu .dropdown-item {
   padding: 10px 15px;
   font-size: 14px;
-  color: #333;
+  color: var(--text-color) !important;
   transition: background 0.2s ease-in-out;
 }
 
 /* Effet au survol des éléments du menu */
 .custom-dropdown-menu .dropdown-item:hover {
-  background-color: rgba(200, 200, 200, 0.3); /* Gris clair */
-  color: #222; /* Texte reste bien visible */
+  background-color: var(--menu-item-bg); 
+  color: var(--text-color); 
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   
 }
@@ -82,7 +81,7 @@
 .custom-dropdown-toggle:active,
 .custom-dropdown-toggle:focus {
   background: transparent !important;
-  color: black !important;  /* Ou var(--text-color) si tu gères un thème */
+  color: var(--text-color) !important;  /* Ou var(--text-color) si tu gères un thème */
   box-shadow: none !important;
 }
 
@@ -90,11 +89,14 @@
 /* Supprimer l'ombre du bouton pour éviter le fond noir */
 .dropdown-toggle::after {
   display: none !important;
-  color: #222 !important;
+  color: var(--text-color) !important;
 }
 /* Icônes à gauche des éléments du menu */
 .dropdown-icon {
   margin-right: 10px;
   font-size: 18px;
   vertical-align: middle;
+}
+.new-chat-btn{
+  color:var(--icon-color) !important;
 }

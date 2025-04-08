@@ -24,6 +24,7 @@
     color: #fff !important;
     letter-spacing: 0.5px;
     transition: all 0.3s ease !important;
+    margin-bottom: 3%;
     margin-top: 5%;
 }
 /* Désactive le style d'autocomplétion */
