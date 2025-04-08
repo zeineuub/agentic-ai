@@ -9,9 +9,9 @@ const Prompt = ({ onSend, onInputFocus  }) => {
   const handleSend = () => {
     if (message.trim()) {
       onSend(message);
-      setMessage(""); // Réinitialiser le message
+      setMessage(""); 
       if (inputRef.current) {
-        inputRef.current.style.height = "45px"; // Réinitialise la hauteur
+        inputRef.current.style.height = "45px"; 
       }
     }
   };
@@ -23,11 +23,7 @@ const Prompt = ({ onSend, onInputFocus  }) => {
       inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 150)}px`; 
     }
   };
-  const handleKeyDown = (e) => {
-    if(e.target.nodeName.toLowerCase() === 'input'){
-      onClick(true);
-    }
-  }
+
   return (
     <div className="prompt-container">
       <textarea

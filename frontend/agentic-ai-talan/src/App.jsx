@@ -25,13 +25,11 @@ function App() {
 
 const RootRedirect = () => {
   const { user } = useAuth();
-  console.log("user   ", user);
   return <Navigate to={user ? "/home" : "/auth"} replace />;
 };
 
 const ProtectedHome = () => {
   const { user } = useAuth();
-  console.log("user home  ", user);
   return user ? <HomePage /> : <Navigate to="/auth" replace />;
 };
 

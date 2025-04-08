@@ -7,8 +7,8 @@ import "./AuthPage.css";
 import Image from 'react-bootstrap/Image';
 import { useAuth } from '../../utils/AuthContext';
 
-import TalanLogoDark from "../../assets/images/talan-image.png"; // Logo Talan
-import AuthBG from "../../assets/images/auth-bg.png"; // Image de fond
+import TalanLogoDark from "../../assets/images/talan-image.png"; 
+import AuthBG from "../../assets/images/auth-bg.png";
 const AuthPage = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState("");

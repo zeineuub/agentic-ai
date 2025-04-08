@@ -6,7 +6,7 @@ import LandingPage from "../../pages/Landing/LandingPage";
 const Chat = ({isSidebarOpen}) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
-    const [showLanding, setShowLanding] = useState(true); // État géré ici
+    const [showLanding, setShowLanding] = useState(true);
     const handleSendMessage = async () => {
       setMessages([...messages, { text: input, user: 'user' }]);
       const response = await fetchMessage(input);
@@ -19,7 +19,7 @@ const Chat = ({isSidebarOpen}) => {
         }
       }, [messages]);
     const handleInputFocus = () => {
-        setShowLanding(false); // Masquer le LandingPage au focus
+        setShowLanding(false); 
       };
     const fetchMessage = async (input) => {
         const response = await fetch('http://localhost:3000/chat', {

@@ -6,7 +6,6 @@ import './HomePage.css';
 
 const HomePage = () => {
 
-  // Vérification de la présence de l'utilisateur dans le localStorage
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedModel, setSelectedModel] = useState('GPT-4');
 

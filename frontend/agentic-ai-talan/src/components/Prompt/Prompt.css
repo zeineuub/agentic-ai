@@ -11,10 +11,10 @@
 
 .prompt-input {
   flex: 1;
-  min-height: 45px; /* Hauteur initiale */
-  max-height: 150px; /* Hauteur maximale avant scrollbar */
-  overflow-y: auto; /* Ajoute la scrollbar si besoin */
-  resize: none; /* Désactive le redimensionnement manuel */
+  min-height: 45px;
+  max-height: 150px; 
+  overflow-y: auto; 
+  resize: none; 
   padding: 12px 15px;
   font-size: 16px;
   border: none;
@@ -25,7 +25,7 @@
   line-height: 1.4;
 }
 
-/* Scrollbar Customisée */
+
 .prompt-input::-webkit-scrollbar {
   width: 6px;
 }
