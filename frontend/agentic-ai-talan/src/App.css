@@ -24,6 +24,7 @@
   --menu-bg:#ffffff;
   --example-bg:#ebedf5;
   --prompt-bg:#ffffff;
+  --message-bg:#f4f4f4;
 }
 
 .app.dark {
@@ -45,6 +46,7 @@
   --menu-bg:#262626;
   --example-bg:#2a2a2b;
   --prompt-bg:#2a2a2b;
+  --message-bg:#2a2a2b;
 }
 
 body {

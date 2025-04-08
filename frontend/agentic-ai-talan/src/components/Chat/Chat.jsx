@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Prompt from "../Prompt/Prompt";
 import "./Chat.css";
 import LandingPage from "../../pages/Landing/LandingPage";
+import Messages from "../Messages/Messages";
 
 const Chat = ({ isSidebarOpen }) => {
   const [messages, setMessages] = useState([]);
@@ -14,6 +15,7 @@ const Chat = ({ isSidebarOpen }) => {
       setShowLanding(true);
       setHideLanding(false);
     }
+
   }, [messages]);
 
   const handleInputFocus = () => {
@@ -21,11 +23,13 @@ const Chat = ({ isSidebarOpen }) => {
     setTimeout(() => setShowLanding(false), 500); 
   };
 
-  const handleSendMessage = async () => {
-    setMessages([...messages, { text: input, user: "user" }]);
-    const response = await fetchMessage(input);
-    setMessages([...messages, { text: response, user: "bot" }]);
-    setInput("");
+  const handleSendMessage = async (msgText) => {
+    // Add the user message to the list
+    setMessages((prev) => [...prev, { text: msgText, user: "user" }]);
+
+    const response = await fetchMessage(msgText);
+    // Add the bot reply to the list
+    setMessages((prev) => [...prev, { text: response, user: "bot" }]);
   };
 
   const fetchMessage = async (input) => {
@@ -52,14 +56,11 @@ const Chat = ({ isSidebarOpen }) => {
         </div>
       )}
       {!showLanding && (
-        <div className="chat-messages">
-          {messages.map((msg, index) => (
-            <div key={index} className={`chat-bubble ${msg.sender}`}>
-              {msg.text}
-            </div>
-          ))}
-        </div>
+        <div className="chat-messages ">
+          <Messages messages={messages} />
+          </div>
       )}
+      
       <Prompt onSend={handleSendMessage} onInputFocus={handleInputFocus} />
     </div>
   );

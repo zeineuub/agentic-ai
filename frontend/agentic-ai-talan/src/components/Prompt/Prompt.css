@@ -23,6 +23,10 @@
   color: var(--text-color);
   border-radius: 25px;
   line-height: 1.4;
+  align-items: center;
+    justify-content: center;
+     
+ 
 }
 
 
