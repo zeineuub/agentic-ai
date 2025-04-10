@@ -4,7 +4,6 @@
     position: relative;
     list-style: none;
     margin: 0;
-    height: calc(100vh - 250px);
 }
 .message {
     clear: both;
@@ -72,12 +71,6 @@
     color:var(--icon-color);
   }
 
-  .messages .message .text_wrapper .text {
-    font-size: 18px;
-    font-weight: 300;
-    height:100% ;
-  }
-  
   .tooltiptext {
     visibility: hidden;
     opacity: 0;
@@ -98,4 +91,9 @@
   .copy-button:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+  }
+
+  .icon-thinking {
+    color: var(--icon-color) !important;
+
   }
