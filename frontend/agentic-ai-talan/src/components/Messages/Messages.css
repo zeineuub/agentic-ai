@@ -1,6 +1,6 @@
 .messages {
     list-style-type: none;
-    padding: 10px 10px 0 10px;
+    padding: 0px 10px 0 10px;
     position: relative;
     list-style: none;
     margin: 0;
@@ -12,6 +12,7 @@
     margin-bottom: 20px;
     transition: all 0.5s linear;
     opacity: 0;
+
 }
   
 .message.user {
@@ -22,13 +23,15 @@
     justify-content: flex-start;
 }
 
+.messages .message.bot .text_wrapper {
+    margin-left: 20px;
+  }
 
-
-.messages .message.user .text_wrapper {
+  .messages .message.user .text_wrapper {
     background-color: var(--message-bg);
     margin-right: 20px;
     float: right;
-}
+  }
 
   .text {
     color: var(--text-color);
@@ -43,13 +46,56 @@
     padding: 20px;
     border-radius: 15px;
     width: calc(100% - 85px);
-    min-width: 100px;
     position: relative;
+    word-wrap: break-word;
+    
   }
 
+  .copy-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 4px; /* some padding for a nicer clickable area */
+    float: right;
+    position: relative;
+  }
   
+  .copy-button:hover {
+    transform: scale(1.2);
+    color:var(--text-color); 
+  }
+  .copy-button .copy-input{
+    color:var(--icon-color);
+  }
+
   .messages .message .text_wrapper .text {
     font-size: 18px;
     font-weight: 300;
+    height:100% ;
   }
   
+  .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    color: var(--text-color);
+    font-size: 11px;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 60%; /* Position tooltip above the button */
+    left:50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    white-space: nowrap; 
+    z-index: 1;
+  }
+  
+  /* Show tooltip on hover */
+  .copy-button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

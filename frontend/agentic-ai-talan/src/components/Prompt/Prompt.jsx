@@ -17,12 +17,13 @@ const Prompt = ({ onSend, onInputFocus  }) => {
   };
 
   const handleInputChange = (e) => {
+    e.preventDefault();
     setMessage(e.target.value);
     if (inputRef.current) {
-      inputRef.current.style.height = "45px"; 
       inputRef.current.style.height = `${Math.min(inputRef.current.scrollHeight, 150)}px`; 
     }
   };
+
 
   return (
     <div className="prompt-container">
@@ -33,7 +34,12 @@ const Prompt = ({ onSend, onInputFocus  }) => {
         value={message}
         onChange={handleInputChange}
         onFocus={onInputFocus}
-        onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()} 
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleSend();
+          }
+        }}
       />
       <button className="send-btn" onClick={handleSend}>
         <SendIcon />
