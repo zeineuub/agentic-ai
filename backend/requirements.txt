@@ -1,2 +1,10 @@
 pydantic
 fastapi[standard]
+langchain
+langchain-core
+langgraph
+uvicorn
+python-dotenv
+langchain-community
+requests
+google-search-results
