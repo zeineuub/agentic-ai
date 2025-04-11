@@ -1,23 +1,22 @@
 
 from langgraph.graph import StateGraph, END
-from langchain_ollama import ChatOllama
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 from langchain_community.tools.tavily_search import TavilySearchResults
 from pydantic import BaseModel, Field  
 from typing import Annotated, Optional, TypedDict, Sequence
 from dotenv import load_dotenv
 import operator
-from langgraph.graph.message import add_messages
-from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage,ToolMessage
+
+from langchain_core.messages import AnyMessage, SystemMessage, ToolMessage
 
 import os
-print("TAVILY_API_KEY:", os.getenv("TAVILY_API_KEY"))
 
 load_dotenv()
 # Define the state graph structure for the agent.
 class AgentState(TypedDict):
     """State model for the StateGraph."""
-    messages: Annotated[list[AnyMessage], add_messages]
+    messages: Annotated[list[AnyMessage], operator.add]
 
 # Define the prompt (system message).
 prompt = (
@@ -32,7 +31,7 @@ class Agent:
         self.system = system
         # Initialize a state graph with the AgentState as the state type.
         graph = StateGraph(AgentState)
-        print("Graph initialized")
+        
         # Add nodes for the LLM call and tool action.
         graph.add_node("llm", self.call_llm)
         graph.add_node("action", self.take_action)
@@ -81,6 +80,14 @@ class Agent:
         return {'messages': results}
 
 # Create an instance of ChatOllama as your language model.
-llm = ChatOllama(model="llama3.1")
+llm = HuggingFaceEndpoint(
+    repo_id="microsoft/Phi-3.5-mini-instruct",
+    task="text-generation",
+    max_new_tokens=250,
+    do_sample=False,
+    model_kwargs={},
+)
+chat_model = ChatHuggingFace(llm=llm)
+
 tool = TavilySearchResults(max_results=2)
-abot = Agent(llm, [tool], system=prompt)
+abot = Agent(chat_model, [tool], system=prompt)
