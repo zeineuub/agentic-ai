@@ -4,6 +4,8 @@ import "./Chat.css";
 import LandingPage from "../../pages/Landing/LandingPage";
 import Messages from "../Messages/Messages";
 import ThinkingMessage from "../Messages/ThinkingMessage";
+import ReactMarkdown from "react-markdown";
+
 const Chat = ({ isSidebarOpen }) => {
   const [messages, setMessages] = useState([]);
   const [showLanding, setShowLanding] = useState(true);
@@ -43,8 +45,8 @@ const Chat = ({ isSidebarOpen }) => {
       }),
     });
     const data = await response.json();
-    console.log("found ",data.response);
-    return data.response; // Assuming the response is in the format { response: "..." }
+
+    return <ReactMarkdown>{data.response}</ReactMarkdown>; 
   };
 
   return (
